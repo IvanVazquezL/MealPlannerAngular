@@ -35,8 +35,9 @@
 <div>
   <div *ngFor="let food of meal">
     <h3>{{food.name}}</h3>
-    <input type="number" [(ngModel)]="food.grams"><span>grams</span>
-    <p>{{food.grams * food.caloriesPerGram | number : '1.2-2'}} calories</p>
-    <input type="number" [(ngModel)]="food.mealPercentage"><span>%</span>
+    <input type="number" [(ngModel)]="food.grams"><span> grams ➝ </span>
+    <p class="inline">{{food.grams * food.caloriesPerGram | number : '1.2-2'}} calories </p>
+    <input type="number" [(ngModel)]="food.mealPercentage" ><span> %</span>
   </div>
+  <button (click)="recalculateMealPortions()">Calculate!</button>
 </div>

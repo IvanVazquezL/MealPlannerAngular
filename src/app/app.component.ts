@@ -55,18 +55,27 @@ export class AppComponent {
   }
 
   addFoodToMeal() {
-    console.log(this.foodSelectForm.value);
+    if (!this.foodSelectForm.value.foodId) return;
+    const foodExistsInMeal = this.meal.filter((food:any) => food.uid === this.foodSelectForm.value.foodId);
+    console.log(foodExistsInMeal)
+    if (foodExistsInMeal.length) return;
 
     this.meal.push(this.foodMetricsList.find((foodMetricElement:any) => foodMetricElement.uid.toString() === this.foodSelectForm.value.foodId));
     console.log(this.meal);
 
-    const equalPercentages = (1 * 100) / this.meal.length;
+    const percentages = 0;
 
     for(const food of this.meal) {
-      food.mealPercentage = equalPercentages;
-      food.grams = (food.mealPercentage * this.calorieLimit) / (food.grams * food.caloriesPerGram);
+      food.mealPercentage = percentages;
     }
   
+  }
+
+  recalculateMealPortions() {
+    for(const food of this.meal) {
+      const percentageValue = food.mealPercentage * this.calorieLimit / 100;
+      food.grams = percentageValue * 1 / food.caloriesPerGram;
+    }
   }
 
 }
