@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+.title {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 36px;
+}
+
 .inline {
     display:inline-block;
 }
