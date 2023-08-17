@@ -1,5 +1,5 @@
 <p class="title">Meal Planner</p>
-<h2>Create Food Metric</h2>
+<h2 class="subtitle">Create Food Metric</h2>
 <form
   [formGroup]="foodMetricForm"
   (submit)="saveFoodMetric()"> 
@@ -21,7 +21,7 @@
     placeholder="Calories">
   <button type="submit">Save</button>
 </form>
-<h2>Search</h2>
+<h2 class="subtitle">Search</h2>
 <form [formGroup]="foodSelectForm" (ngSubmit)="addFoodToMeal()">
   <select formControlName="foodId">
     <option [ngValue]="null" disabled>Select Food</option>
@@ -30,7 +30,7 @@
   <button type="submit">Add</button>
 </form>
 
-<h2>Meal</h2>
+<h2 class="subtitle">Meal</h2>
 <input type="number" placeholder="Calorie Limit" [(ngModel)]="calorieLimit"><span>calories</span>
 <div>
   <div *ngFor="let food of meal">

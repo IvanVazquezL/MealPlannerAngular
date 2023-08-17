@@ -5,6 +5,17 @@
     font-size: 36px;
 }
 
+.subtitle {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 26px;
+}
+
 .inline {
     display:inline-block;
+}
+
+button {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+
 }
